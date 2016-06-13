@@ -17,4 +17,13 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@index');
+Route::get('/management', 'AdminController@index');
+Route::get('/clientmanage', 'AdminController@clientManage');
+Route::post('/services', 'HomeController@serviceTemSave');
+Route::post('/services2', 'HomeController@serviceTimeArrange');
+Route::post('/confirmService', 'HomeController@confirmService');
+
+
+
+//Route::get('/dashboard','')

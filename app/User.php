@@ -29,4 +29,11 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
+    public function cars(){
+        return $this->hasMany('App\Car','user_id');
+    }
+
+    public function bookings(){
+        return $this->hasMany('App\Booking','client_id');
+    }
 }
