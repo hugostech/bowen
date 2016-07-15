@@ -12,60 +12,35 @@
         <h3 class="panel-title">Booking Panell</h3>
     </div>
     <div class="panel-body">
-        {!! Form::open(['url'=>'services']) !!}
-        <div class="col-sm-8">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search service">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                  </span>
-            </div>
+        {!! Form::open(['url'=>'services2']) !!}
+        <div class="col-md-8">
+            <h3>请选择合适的时间</h3>
         </div>
-        <div class="col-sm-12" style="color: #5bc0de">
-            <div class="col-sm-3" style="color: black"><h4>Suggested Service</h4></div>
-            <div class="col-sm-9"><hr></div>
-            <div class="col-sm-12">
-                <label><input type="checkbox"> Full Service</label><br>
-                <label><input type="checkbox"> Replace typr</label><br>
-                <label><input type="checkbox"> Battary Check</label>
-            </div>
 
 
-
-        </div>
-        <div class="col-md-12">
-            <div class="container">
-                <div class="col-sm-6" style="height:130px;">
-                    <div class="form-group">
-                        <div class='input-group date' id='datetimepicker11'>
-                            <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar">
-                    </span>
+            <div class="col-sm-8" style="height:130px;">
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker11'>
+                        <input type='text' class="form-control" name="arrangetime"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar">
                 </span>
-                        </div>
+            </span>
                     </div>
                 </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker11').datetimepicker({
-                            daysOfWeekDisabled: [0, 6]
-                        });
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker11').datetimepicker({
+                        daysOfWeekDisabled: [0, 6]
                     });
-                </script>
-            </div>
-            <div class="col-sm-3"><h4>All Service</h4></div>
-            <div class="col-sm-9"><hr></div>
-            <div class="col-sm-12">
-                @foreach($services as $service)
-                <label class="text-capitalize"><input type="checkbox" name="services[]" value="{{$service->id}}"> {{$service->content}} </label><br>
-                @endforeach
-            </div>
-            {!! $services->render() !!}
+                });
+            </script>
 
-        </div>
 
-        <div class="col-sm-8 ">
+
+
+        <div class="col-md-8 ">
             <br>
             <button type="submit" class="btn-block btn-primary btn">Next</button>
         </div>

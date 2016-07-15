@@ -13,14 +13,18 @@ class AdminController extends Controller
 {
     public function index(){
         $data = self::getBooking();
-        return view('admin.index',compact('data'));
+        return view('admin.booking',compact('data'));
 
     }
 
     public function clientManage(){
         $users = User::all();
-        return view('admin.client',compact('users'));
+        return view('admin.clients',compact('users'));
 
+    }
+
+    public function addService(){
+        return view('admin.servicelist');
     }
 
     private function getBooking(){
