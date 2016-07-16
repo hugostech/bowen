@@ -21,12 +21,16 @@ Route::get('/dashboard', 'HomeController@index');
 Route::get('/', 'HomeController@index');
 Route::get('/management', 'AdminController@index');
 Route::get('/clientmanage', 'AdminController@clientManage');
+Route::get('/servicemanage', 'AdminController@serviceManage');
+Route::get('/delservice/{id}', 'AdminController@delservice');
 Route::get('/addservice','AdminController@addService');
 
 
 Route::post('/services', 'HomeController@serviceTemSave');
 Route::post('/services2', 'HomeController@serviceTimeArrange');
 Route::post('/confirmService', 'HomeController@confirmService');
+
+Route::post('/service_edit','AdminController@service_edit');
 
 
 

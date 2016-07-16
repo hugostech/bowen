@@ -1,10 +1,12 @@
 @extends('layouts.newadmin')
 
 @section('title')
-Client_List
+    Client_List
 @endsection
 
 @section('content')
+    <div class="col-sm-12 text-right"><a href="{{url('register')}}" class="btn btn-default">New Client</a></div>
+    <hr>
     <table class="table table-striped">
         <tr>
             <th class="tc" width="5%"></th>
@@ -25,4 +27,6 @@ Client_List
             </tr>
         @endforeach
     </table>
+    {{ $users->links() }}
+
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.newadmin')
 
 @section('title')
-Booking_List
+    Booking_List
 @endsection
 
 @section('content')
@@ -31,4 +31,5 @@ Booking_List
             </tr>
         @endforeach
     </table>
+    {{$bookings->links()}}
 @endsection

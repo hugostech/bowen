@@ -70,12 +70,16 @@
     <div class="col-md-2 col-md-offset-2 text-right">
         <ul class="list-group">
             <a href="{{url('management')}}"><li class="list-group-item text-left" id="Booking_List">
-                <span class="badge">14</span>
+                <span class="badge">{{$nums['booking']}}</span>
                 Order
             </li></a>
             <a href="{{url('clientmanage')}}"><li class="list-group-item text-left" id="Client_List">
-                <span class="badge">14</span>
+                <span class="badge">{{$nums['user']}}</span>
                 Client
+            </li></a>
+            <a href="{{url('servicemanage')}}"><li class="list-group-item text-left" id="Service_List">
+                <span class="badge">{{$nums['service']}}</span>
+                Service
             </li></a>
         </ul>
     </div>
@@ -98,6 +102,7 @@
 <script>
     $(document).ready(function(){
         var content = $("#content_title").text();
+        content = $.trim(content);
         $("#"+content).addClass('active');
     });
 </script>
